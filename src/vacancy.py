@@ -122,7 +122,8 @@ class Vacancy:
             with open(filename, 'rt', encoding='utf-8') as file:
                 data = json.load(file)
                 for line in data:
-                    cls(line["_Vacancy__title"], line["_Vacancy__url"], line["_Vacancy__salary"], line["_Vacancy__salary_currency"], line["_Vacancy__date"],
+                    cls(line["_Vacancy__title"], line["_Vacancy__url"], line["_Vacancy__salary"],
+                        line["_Vacancy__salary_currency"], line["_Vacancy__date"],
                         line["_Vacancy__city"])
         except FileNotFoundError:
             print("Отсутствует файл для чтения")
@@ -196,10 +197,11 @@ class Vacancy:
             for index in range(number_vacancies):
                 if list_vacancies[index]['_Vacancy__salary']:
                     print(
-                        f"Профессия: {list_vacancies[index]['_Vacancy__title']}, зарплата до {list_vacancies[index]['_Vacancy__salary']}"
+                        f"Профессия: {list_vacancies[index]['_Vacancy__title']}, зарплата до "
+                        f"{list_vacancies[index]['_Vacancy__salary']}"
                         f" {list_vacancies[index]['_Vacancy__salary_currency']}, дата публикации: "
-                        f"{list_vacancies[index]['_Vacancy__date']}, город: {list_vacancies[index]['_Vacancy__city']}, url: "
-                        f"{list_vacancies[index]['_Vacancy__url']}")
+                        f"{list_vacancies[index]['_Vacancy__date']}, город: {list_vacancies[index]['_Vacancy__city']}, "
+                        f"url: {list_vacancies[index]['_Vacancy__url']}")
                 else:
                     print(
                         f"Профессия: {list_vacancies[index]['_Vacancy__title']}, зарплата не указана, дата публикации: "
