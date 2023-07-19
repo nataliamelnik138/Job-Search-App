@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "pythonproject17-course-work-4"
+version = "0.1.0"
+description = ""
+authors = ["Natalia Melnik <nataliamelnik138@gmail.com>"]
+readme = "README.md"
+packages = [{include = "pythonproject17_course_work_4"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.31.0"
+executor = "^23.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
